@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPL Cricket Rankings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #2e3b55;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    .section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      color: #2e3b55;
+    }
+    .teams {
+      color: #2b7a0b;
+      font-style: italic;
+      padding-left: 15px;
+    }
+    .champion {
+      color: #f39c12;
+      font-weight: bold;
+    }
+    .runner {
+      color: #7f8c8d;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .tabs button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #2e3b55;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .tabs button:hover {
+      background-color: #1c2538;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #2e3b55;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .ranking-table {
+      display: none;
+    }
+    .ranking-table.active {
+      display: block;
+    }
+    .first-img {
+      width: 80px;
+      height:80px;
+      vertical-align: middle;
+      margin-right: 10px;
+      
+    }
+    .final-note {
+      text-align: center;
+      font-size: 1.3em;
+      color: red;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    function showTable(type) {
+      document.querySelectorAll('.ranking-table').forEach(el => el.classList.remove('active'));
+      document.getElementById(type).classList.add('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>PPL Cricket Rankings</h1>
+  </header>
+
+  <div class="section">
+    <h2>Teams</h2>
+    <p class="teams">
+      1. Himel's Hitmans (HH) - Cap. Himel<br>
+      2. The Xanxer Draffins (TXD) - Cap. Shamim<br>
+      3. No Mercy (NM) - Cap. Sizar<br>
+      4. Sajid Gladiators (SG) - Cap. Sajid<br>
+      5. Dark Emperors (DE) - Cap. Shoccho<br>
+      6. Turjo Tigers (TT) - Cap. Turjo<br>
+      7. Soummo's Lightning Warriors (SLW) - Cap. Shoummo<br>
+      8. Sneho Royals (SR) - Cap. Sneho
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>2018 PPL Results</h2>
+    <p>Seven Teams participated<br>
+      <span class="champion">Champion - HH</span><br>
+      <span class="runner">Runners up - NM</span>
+    </p>
+
+    <h2>2019 PPL Results</h2>
+    <p>Seven Teams participated<br>
+      <span class="champion">Champion - TXD</span><br>
+      <span class="runner">Runners up - SR</span>
+    </p>
+  </div>
+
+  <div class="tabs">
+    <button onclick="showTable('batting')">Batting</button>
+    <button onclick="showTable('bowling')">Bowling</button>
+    <button onclick="showTable('fielding')">Fielding</button>
+  </div>
+
+  <div class="section ranking-table active" id="batting">
+    <h2>Batting Rankings (According to 2019)</h2>
+    <table>
+      <tr><th>Rank</th><th>Player</th><th>Team Role</th></tr>
+      <tr class="first-row">
+        <td>1</td>
+        <td><img src="Mahfuz.png" class="first-img"> Himel</td>
+        <td>1st Captain</td>
+      </tr>
+      <tr><td>2</td><td>Sizar</td><td>6th Member</td></tr>
+      <tr><td>3</td><td>Sajid</td><td>3rd Captain</td></tr>
+      <tr><td>4</td><td>Sneho</td><td>4th Member</td></tr>
+      <tr><td>5</td><td>Shamim</td><td>Not a prt member</td></tr>
+      <tr><td>6</td><td>Sachca</td><td>5th Member</td></tr>
+      <tr><td>7</td><td>Shoummo</td><td>2nd Captain</td></tr>
+    </table>
+  </div>
+
+  <div class="section ranking-table" id="bowling">
+    <h2>Bowling Rankings (According to 2019)</h2>
+    <table>
+      <tr><th>Rank</th><th>Player</th><th>Team Role</th></tr>
+      <tr><td>1</td><td><img src="Shamim.png" class="first-img">Shamim</td><td>Not a prt member</td></tr>
+      <tr><td>2</td><td>Himel</td><td>1st Captain</td></tr>
+      <tr><td>3</td><td>Sachcha</td><td>5th Member</td></tr>
+      <tr><td>4</td><td>Sneho</td><td>4th Member</td></tr>
+      <tr><td>5</td><td>Shoummo</td><td>2nd Captain</td></tr>
+      <tr><td>6</td><td>Sajid</td><td>3rd Captain</td></tr>
+      <tr><td>7</td><td>Sizar</td><td>6th Member</td></tr>
+    </table>
+  </div>
+
+  <div class="section ranking-table" id="fielding">
+    <h2>Fielding Rankings (According to 2019)</h2>
+    <table>
+      <tr><th>Rank</th><th>Player</th><th>Team Role</th></tr>
+      <tr><td>1</td><td><img src="Sajid.png" class="first-img">Sajid</td><td>3rd Captain</td></tr>
+      <tr><td>2</td><td>Sizar</td><td>6th Member</td></tr>
+      <tr><td>3</td><td>Sneho</td><td>4th Member</td></tr>
+      <tr><td>4</td><td>Shamim</td><td>Not a prt member</td></tr>
+      <tr><td>5</td><td>Himel</td><td>1st Captain</td></tr>
+      <tr><td>6</td><td>Shachcha</td><td>5th Member</td></tr>
+      <tr><td>7</td><td>Shoummo</td><td>2nd Captain</td></tr>
+    </table>
+  </div>
+
+  <p class="final-note">Unfortunately the legacy of PPL ended in 2020</p>
+</body>
+</html>
